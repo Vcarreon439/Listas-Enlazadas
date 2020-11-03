@@ -47,7 +47,7 @@ namespace Listas_Enlazadas
                 /*
                  * En este caso realmente se puede pasar por alto la variable final,
                  * ya que podemos hacer uso de la variable auxiliar para poder
-                 * "reestablecer" el orden de la lista
+                 * "reestablecer" el orden de la lista.
                 */
                 #endregion
             }
@@ -82,9 +82,58 @@ namespace Listas_Enlazadas
                 aux = aux.SiguienteNodo;
                 contador-=-1;
             }
+
             Console.WriteLine("Hay {0} elementos en la lista", contador);
 
             return contador;
         }
+
+        public void ContarParImpar()
+        {
+            try
+            {
+
+                if (Lista_Vacia())
+                {
+                    Console.WriteLine("La lista esta vacia, no se pueden encontrar pares o impares");
+                }
+                else
+                {
+                    aux = cabeza;
+                    int contadorPar = 0;
+                    int contadorImpar = 0;
+
+                    while (aux != null)
+                    {
+                    
+                        if (Convert.ToInt32(aux.Dato)%2==0)
+                            contadorPar++;
+                        else
+                            contadorImpar++;
+
+                        aux = aux.SiguienteNodo;
+                    }
+                    Console.WriteLine("La lista tiene {0} nodos PARES", contadorPar);
+                    Console.WriteLine("La lista tiene {0} nodos IMPARES", contadorImpar);
+                }
+            
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+
+
+        public bool Lista_Vacia() 
+        {
+            if (cabeza==null)
+                return true;
+            else
+                return false;
+        }
+
     }
 }

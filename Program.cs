@@ -8,15 +8,22 @@ namespace Listas_Enlazadas
         static void Main(string[] args)
         {
             ListaE Enlazada = new ListaE();
-            
-            Enlazada.InsertarALaCabeza(95);
-            Enlazada.InsertarALaCabeza(72);
-            Enlazada.InsertarALaCabeza("abc");
 
-            Enlazada.InsertarAlFinal("SSS");
+            Console.WriteLine(Enlazada.Lista_Vacia());
+
+
+            Enlazada.InsertarALaCabeza(20);
+            Enlazada.InsertarALaCabeza(15);
+            Enlazada.InsertarALaCabeza(1);
+            Enlazada.InsertarALaCabeza(13);
+            Enlazada.InsertarALaCabeza(10);
 
             Enlazada.Mostrar();
-            Enlazada.ContarElementos();
+
+            Enlazada.ContarParImpar();
+
+            Console.WriteLine(Enlazada.Lista_Vacia());
+
             Console.ReadKey();
 
         }
